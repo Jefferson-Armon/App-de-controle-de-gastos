@@ -15,17 +15,15 @@ const todos = [{
   title: 'clean room',
   completed: false
 }]
-
-let todosLeft = todos.filter(function (todo) {
-  return !todo.completed
+//Creating 'add task' button.
+document.querySelector('#add-task').addEventListener('click', function () {
+  console.log('Your new task will be added here')
 })
-
-const summary = document.createElement('h2')
-summary.textContent = `You have ${todosLeft.length} to-dos left`
-document.querySelector('body').appendChild(summary)
-
-todos.forEach(function (todo) {
-  const p = document.createElement('p')
-  p.textContent = todo.title
-  document.querySelector('body').appendChild(p)
+//creating 'remove all tasks' button.
+document.querySelector('#remove-all-tasks').addEventListener('click', function () {
+  console.log('This will remove all tasks')
+})
+//listen for 'add-task' element
+document.querySelector('#add-todo').addEventListener('input', function (task) {
+  console.log(task.target.value)
 })
