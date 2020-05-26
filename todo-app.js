@@ -34,10 +34,15 @@ const renderTodos = function (todosArray, filters) {
     //here we say that the title of each to-do is going to be checked and compared to the filter.
     //both are converted to lower case, so that it is not case sensitive.
     //remember the filter will be changed every time the user types a letter.
-
   })
-  console.log(filteredTodos)
-  //now the notes that match the letters typed by the user will be shown on the screen.
+  
+  document.querySelector('#to-dos').innerHTML = ''
+
+  filteredTodos.forEach(function (todo) {
+    const todoElement = document.createElement('p')
+    todoElement.textContent = todo.title  
+    document.querySelector('#to-dos').appendChild(todoElement)
+  })
 }
 
 renderTodos(todos, filters)
